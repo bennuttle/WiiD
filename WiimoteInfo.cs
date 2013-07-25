@@ -289,6 +289,15 @@ namespace WiimoteTest
             int secondY = second.RawPosition.Y;
             int thirdY = third.RawPosition.Y;
 
+            g.DrawEllipse(new Pen(Color.Red), (int)(first.RawPosition.X / 4), (int)(first.RawPosition.Y / 4),
+                             first.Size + 1, first.Size + 1);
+
+            g.DrawEllipse(new Pen(Color.Blue), (int)(second.RawPosition.X / 4), (int)(second.RawPosition.Y / 4),
+                             second.Size + 1, second.Size + 1);
+
+            g.DrawEllipse(new Pen(Color.Yellow), (int)(third.RawPosition.X / 4), (int)(third.RawPosition.Y / 4),
+                             third.Size + 1, third.Size + 1);
+
             double firstSecondDist = Math.Sqrt(Math.Pow((firstX - secondX), 2) + (Math.Pow((firstY - secondY), 2)));
             double secondThirdDist = Math.Sqrt(Math.Pow((secondX - thirdX), 2) + (Math.Pow((secondY - thirdY), 2)));
             double firstThirdDist = Math.Sqrt(Math.Pow((firstX - thirdX), 2) + (Math.Pow((firstY - thirdY), 2)));
@@ -304,6 +313,12 @@ namespace WiimoteTest
 
         private String getTwoPoints(IRSensor first, IRSensor second)
         {
+            g.DrawEllipse(new Pen(Color.Red), (int)(first.RawPosition.X / 4), (int)(first.RawPosition.Y / 4),
+                            first.Size + 1, first.Size + 1);
+
+            g.DrawEllipse(new Pen(Color.Blue), (int)(second.RawPosition.X / 4), (int)(second.RawPosition.Y / 4),
+                            second.Size + 1, second.Size + 1);
+
             return first.RawPosition.X.ToString() + "," + first.RawPosition.Y.ToString() + "," + second.RawPosition.X.ToString() + "," + second.RawPosition.Y.ToString() + '\n';
         }
 
